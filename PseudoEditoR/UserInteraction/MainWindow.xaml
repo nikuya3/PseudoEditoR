@@ -1,0 +1,192 @@
+﻿<Window x:Class="PseudoEditoR.UserInteraction.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PseudoEditoR 0.1.2 (Alpha)"
+        Width="Auto"
+        Height="Auto"
+        Closing="Window_Closing"
+        Loaded="Window_Loaded"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <GroupBox x:Name="IoGroupBox"
+                  Grid.Row="0"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2"
+                  Width="251"
+                  Height="52"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Header="Import/ Export">
+            <Grid x:Name="IoGrid"
+                  Width="241"
+                  Height="38"
+                  Margin="0,0,-2,-8"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top">
+                <Button x:Name="IoLoadButton"
+                        Width="75"
+                        Margin="0,6,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="IoLoadButton_Click"
+                        Content="Load" />
+                <Button x:Name="IoSaveButton"
+                        Width="75"
+                        Margin="80,0,0,12"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Bottom"
+                        Click="IoSaveButton_Click"
+                        Content="Save" />
+                <Button x:Name="IoPrintButton"
+                        Width="75"
+                        Margin="160,6,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="IoPrintButton_Click"
+                        Content="Print" />
+            </Grid>
+        </GroupBox>
+        <ListBox x:Name="CodeListBox"
+                 Width="100"
+                 Height="100"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Background="WhiteSmoke"
+                 FontFamily="Consolas"
+                 GotFocus="CodeListBox_GotFocus"
+                 IsHitTestVisible="True"
+                 PreviewKeyDown="CodeListBox_PreviewKeyDown"
+                 PreviewMouseDown="CodeListBox_PreviewMouseDown"
+                 ToolTip="throw new NotImplementedException();"
+                 Visibility="Hidden" />
+        <GroupBox x:Name="CodeGroupBox"
+                  Grid.Row="1"
+                  Grid.Column="0"
+                  Grid.RowSpan="2"
+                  Grid.ColumnSpan="2"
+                  Width="994"
+                  Height="544"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Header="Code">
+            <Grid x:Name="CodeGrid"
+                  Width="542"
+                  Height="275"
+                  Margin="10,10,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top">
+                <RichTextBox x:Name="CodeTextBox"
+                             Width="962"
+                             Margin="0,0,-420,-238"
+                             HorizontalAlignment="Left"
+                             AcceptsReturn="True"
+                             AcceptsTab="True"
+                             AutoWordSelection="False"
+                             FontFamily="Consolas"
+                             HorizontalScrollBarVisibility="Auto"
+                             PreviewKeyDown="CodeTextBox_PreviewKeyDown"
+                             ScrollViewer.CanContentScroll="True"
+                             TextChanged="CodeTextBox_TextChanged"
+                             ToolTip="throw new NotImplementedException();"
+                             UndoLimit="0"
+                             VerticalScrollBarVisibility="Auto">
+                    <RichTextBox.Resources>
+                        <Style TargetType="{x:Type Paragraph}">
+                            <Setter Property="Margin" Value="0" />
+                        </Style>
+                        <VisualBrush x:Key="WavyBrush"
+                                     x:Name="wavyBrush"
+                                     TileMode="Tile"
+                                     Viewbox="0,0,3,2"
+                                     Viewport="0,0.8,6,4"
+                                     ViewportUnits="Absolute">
+                            <VisualBrush.Visual>
+                                <Path Data="M0.17647059,0.49999997 C1.0588235,-0.52317461 1.9411765,1.5231745 2.8235294,0.49999997"
+                                      Stroke="Red"
+                                      StrokeEndLineCap="Square"
+                                      StrokeStartLineCap="Square"
+                                      StrokeThickness="0.4" />
+                            </VisualBrush.Visual>
+                        </VisualBrush>
+                        <Pen x:Key="wavyPen"
+                             x:Name="wavyPen"
+                             Brush="{StaticResource WavyBrush}"
+                             Thickness="6" />
+                    </RichTextBox.Resources>
+                </RichTextBox>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="ErrorGroupBox"
+                  Grid.Row="3"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2"
+                  Width="994"
+                  Height="153"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Header="Errors">
+            <Grid Width="541"
+                  Height="116"
+                  Margin="10,10,0,0"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top">
+                <ListView x:Name="ErrorListView"
+                          Height="116"
+                          Margin="0,0,-425,0"
+                          VerticalAlignment="Top"
+                          PreviewKeyDown="ErrorListView_PreviewKeyDown"
+                          PreviewMouseDown="ErrorListView_PreviewMouseDown"
+                          SelectionMode="Single">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn x:Name="Category"
+                                            DisplayMemberBinding="{Binding Type}"
+                                            Header="Category" />
+                            <GridViewColumn x:Name="StandardSequence"
+                                            DisplayMemberBinding="{Binding StandardSequence}"
+                                            Header="Standard sequence" />
+                            <GridViewColumn x:Name="Description"
+                                            Width="730"
+                                            DisplayMemberBinding="{Binding Description}"
+                                            Header="Description" />
+                            <GridViewColumn x:Name="Line"
+                                            DisplayMemberBinding="{Binding Line}"
+                                            Header="Line" />
+                            <GridViewColumn x:Name="Column"
+                                            DisplayMemberBinding="{Binding Column}"
+                                            Header="Column" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Grid>
+        </GroupBox>
+        <ComboBox x:Name="LocalizationLanguageComboBox"
+                  Grid.Row="4"
+                  Grid.Column="0"
+                  Width="120"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  SelectionChanged="LocalizationLanguageComboBox_SelectionChanged" />
+        <ComboBox x:Name="ProgrammingLanguageComboBox"
+                  Grid.Row="4"
+                  Grid.Column="1"
+                  Width="120"
+                  HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  SelectionChanged="ProgrammingLanguageComboBox_SelectionChanged" />
+
+    </Grid>
+</Window>

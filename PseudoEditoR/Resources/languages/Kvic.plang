@@ -1,0 +1,88 @@
+{
+  "Name": "Kvic",
+  "Keywords": {
+    "if": "falls",
+    "then": "dann",
+    "else": "sonst",
+    "for": "für",
+	"to": "bis",
+	"step": "Schrittweite",
+    "do": "wiederhole",
+    "while": "solange",
+	"switch": "falls",
+	"case": "fall",
+	"default": "sonst"
+  },
+  "ValueTypes": {
+    "Boolean": "bool",
+    "Character": "char",
+    "Integer": "int",
+    "String": "string",
+    "Float": "float",
+	"UserDefined": "struct"
+  },
+  "Commands": {
+    "read": "lies",
+    "write": "schreibe"
+  },
+  "Operators": {
+	"equals": "=",
+    "less-than": "<",
+    "greater-than": ">",
+    "less-than-or-equal": "<=",
+    "greater-than-or-equal": ">=",
+    "not-equal": "!=",
+    "additional": ",",
+	"decimal mark": ".",
+	"not": "nicht",
+	"and": "und",
+	"or": "oder",
+    "plus": "+",
+    "minus": "-",
+	"multiplication": "*",
+	"division": "/",
+	"integer division": "div",
+	"modulo": "mod",
+	"exponentiation": "^",
+	"root": "sqrt",
+	"string concatenation": "+",
+	"assignment": "="
+  },
+  "SpecialSyntax": {
+	"equals": "==",
+	"not-equal": "<>",
+	"string concatenation": "&"
+  },
+  "Colors": {
+    "Keyword": "#FF0000FF",
+    "ValueType": "#FF0000FF",
+    "Command": "#FF0000FF",
+    "Variable": "#FF000000",
+	"Operator": "#FF000000",
+    "None": "#FF000000",
+    "Boolean": "#FF0000FF",
+    "Character": "#FFA31515",
+    "Float": "#FF000000",
+    "Integer": "#FF000000",
+    "String": "#FFA31515",
+	"UserDefined": "#FF0000FF",
+    "BlockCommentary": "#FF008000",
+    "LineCommentary": "#FF008000",
+    "SpecialSyntax": "#FF000000",
+    "NotDefined": "#FF000000"
+  },
+  "MistakeDescriptions": {
+    "NotDefined": "{0} contains no definition for \"{1}\""
+  },
+  "StartTokens": {
+    "LineCommentary": "//",
+	"BlockCommentary": "/*",
+    "Character": "'",
+    "String": "\""
+  },
+  "EndTokens": {
+	"BlockCommentary": "*/",
+	"Character": "'",
+	"String": "\""
+  }
+}

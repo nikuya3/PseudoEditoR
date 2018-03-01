@@ -1,0 +1,16 @@
+{
+  "language": "English",
+  "code": "Code",
+  "error": "Error",
+  "io": "Import/Export",
+  "load": "Load",
+  "save": "Save",
+  "print": "Print",
+  "category": "Category",
+  "standardSequence": "Standard sequence",
+  "description": "Description",
+  "line": "Line",
+  "column": "Column",
+  "noDefinition": "No Definition",
+  "noDefinitionDesc": "{0} contains no definition for \"{1}\"."
+}

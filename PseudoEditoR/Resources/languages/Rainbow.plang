@@ -1,0 +1,88 @@
+{
+  "Name": "Rainbow",
+  "Keywords": {
+    "if": "if",
+    "then": "then",
+    "else": "else",
+    "for": "for",
+	"to": "to",
+	"step": "step",
+    "do": "do",
+    "while": "while",
+	"switch": "switch",
+	"case": "case",
+	"default": "else"
+  },
+  "ValueTypes": {
+    "Boolean": "boolean",
+    "Character": "character",
+    "Integer": "integer",
+    "String": "string",
+    "Float": "float",
+	"UserDefined": "struct"
+  },
+  "Commands": {
+    "read": "read",
+    "write": "write"
+  },
+  "Operators": {
+	"equals": "=",
+    "less-than": "<",
+    "greater-than": ">",
+    "less-than-or-equal": "<=",
+    "greater-than-or-equal": ">=",
+    "not-equal": "!=",
+    "additional": ",",
+	"decimal mark": ".",
+	"not": "not",
+	"and": "and",
+	"or": "or",
+    "plus": "+",
+    "minus": "-",
+	"multiplication": "*",
+	"division": "/",
+	"integer division": "div",
+	"modulo": "mod",
+	"exponentiation": "^",
+	"root": "sqrt",
+	"string concatenation": "+",
+	"assignment": ":="
+  },
+  "SpecialSyntax": {
+	"equals": "==",
+	"not-equal": "<>",
+	"string concatenation": "&"
+  },
+  "Colors": {
+    "Keyword": "#FF0000",
+    "ValueType": "#660066",
+    "Command": "#000066",
+    "Variable": "#006666",
+	"Operator": "#FF004300",
+    "None": "#339933",
+    "Boolean": "#66FF99",
+    "Character": "#FFFF99",
+    "Float": "#FF9900",
+    "Integer": "#999966",
+    "String": "#003300",
+	"UserDefined": "#CC66FF",
+    "BlockCommentary": "#FF3399",
+    "LineCommentary": "#666699",
+    "SpecialSyntax": "#FF000000",
+    "NotDefined": "#FF000000"
+  },
+  "MistakeDescriptions": {
+    "NotDefined": "{0} contains no definition for \"{1}\""
+  },
+  "StartTokens": {
+    "LineCommentary": "//",
+	"BlockCommentary": "/*",
+    "Character": "'",
+    "String": "\""
+  },
+  "EndTokens": {
+	"BlockCommentary": "*/",
+	"Character": "'",
+	"String": "\""
+  }
+}

@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PseudoEditoR.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LastUsedLocalizationLanguage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Deutsch</Value>
+    </Setting>
+    <Setting Name="LastUsedProgrammingLanguage" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Kvic</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
